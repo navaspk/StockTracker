@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">StockTracker</string>
+    <string name="stock_x_home">StockX</string>
+    <string name="stock_x_start">Start</string>
+    <string name="stock_x_stop">Stop</string>
+    <string name="stock_x_updated">Updated: %s</string>
+</resources>
