@@ -30,8 +30,14 @@ Built with **Kotlin**, **Jetpack Compose**, and **Clean Architecture**, it offer
 
 ## 📂 Project Structure
 
-![Screenshot 2025-08-13 at 5.04.24 PM.png](../../../../../var/folders/6g/k_k2s9397kq47nh724lst0lm0000gp/T/TemporaryItems/NSIRD_screencaptureui_OeJCcs/Screenshot%202025-08-13%20at%205.04.24%E2%80%AFPM.png)
-
+StockTracker/
+│
+├── base/ # Base module — shared utilities (BaseViewModel, etc.)
+├── network/ # Networking module — Ktor client setup for WebSocket
+├── app/
+│ ├── src/main/kotlin/ # Application source code
+│ ├── src/main/res/ # Resources (drawables, layouts, values)
+│ └── AndroidManifest.xml # App manifest
 
 
 ---
