@@ -32,8 +32,7 @@ class StockTrackerActivity : ComponentActivity() {
                 Scaffold(
                     topBar = {
                         ShowMainToolBar(
-                            stringResource(R.string.stock_x_home),
-                            onBackClicked = { onBackPressedDispatcher.onBackPressed() }
+                            stringResource(R.string.stock_x_home)
                         )
                     }
                 ) { paddingValues ->

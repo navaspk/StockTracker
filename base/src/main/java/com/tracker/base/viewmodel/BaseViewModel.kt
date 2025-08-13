@@ -51,6 +51,9 @@ abstract class BaseViewModel<Event : ViewEvent, UiState : ViewState, Effect : Vi
         _viewState.value = newState
     }
 
+    /**
+     * To manage side effect from compose as viewmodel can send the event to do same like anim, snack bar etc.
+     */
     fun sendUIEffect(builder: () -> Effect) {
         val effectValue = builder()
         viewModelScope.launch { _effect.send(effectValue) }

@@ -2,18 +2,23 @@ package com.tracker.stocktracker.ui.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight.Companion.Bold
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.tracker.stocktracker.R
 import com.tracker.stocktracker.model.events.StockXEvent
+import com.tracker.stocktracker.ui.theme.font16Body
+import com.tracker.stocktracker.ui.theme.font20Body
 import com.tracker.stocktracker.ui.viewmodel.StockTrackerViewModel
 import org.koin.androidx.compose.koinViewModel
 
@@ -27,15 +32,21 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun ShowMainToolBar(
     title: String,
-    onBackClicked: () -> Unit,
     viewModel: StockTrackerViewModel = koinViewModel()
 ) {
     val toolbarState by viewModel.viewState.collectAsState()
 
+
     CenterAlignedTopAppBar(
-        title = { Text(title, fontWeight = Bold) },
+        title = {
+            Text(
+                title,
+                fontSize = font20Body.sp,
+                fontWeight = FontWeight.Bold
+            )
+        },
         navigationIcon = {
-            ShowNavigation(toolbarState.connectionStatus, onBackClicked)
+            ShowConnectionStatus(toolbarState.connectionStatus)
         },
         actions = {
             ShowActionButton(
@@ -47,20 +58,23 @@ fun ShowMainToolBar(
 }
 
 @Composable
-private fun ShowNavigation(connectionStatus: Boolean?, onBackClicked: () -> Unit) {
-    IconButton(onClick = onBackClicked) {
-        Image(
-            if (connectionStatus == true)
-                painterResource(R.drawable.ic_green_light)
-            else painterResource(R.drawable.ic_red_light), contentDescription = null
-        )
-    }
+private fun ShowConnectionStatus(connectionStatus: Boolean?) {
+    Image(
+        painter = if (connectionStatus == true)
+            painterResource(R.drawable.ic_green_light)
+        else painterResource(R.drawable.ic_red_light),
+        contentDescription = null,
+        modifier = Modifier.padding(start = font16Body.dp)
+    )
+
 }
 
 @Composable
 private fun ShowActionButton(toggleStatus: Boolean, onClick: () -> Unit) {
     Text(
-        text = if (toggleStatus) "Stop" else "Start",
-        modifier = Modifier.clickable { onClick() }
+        text = if (toggleStatus) stringResource(R.string.stock_x_stop) else stringResource(R.string.stock_x_start),
+        modifier = Modifier
+            .clickable { onClick() }
+            .padding(end = font16Body.dp)
     )
 }

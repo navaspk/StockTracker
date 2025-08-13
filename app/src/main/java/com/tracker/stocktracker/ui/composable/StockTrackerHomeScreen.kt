@@ -29,7 +29,7 @@ import com.tracker.stocktracker.ui.viewmodel.StockTrackerViewModel
 import com.tracker.stocktracker.utils.epochToDateTime
 
 /**
- * Home screen build using LazyColumn and helps to show Stock symbols, price and status
+ * Home screen build using LazyColumn and helps to show Stock symbols, price, status price and date of modification
  *
  * Created by : Navas
  * Date : 12/08/2025

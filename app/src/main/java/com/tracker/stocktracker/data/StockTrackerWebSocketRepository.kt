@@ -99,7 +99,7 @@ class StockTrackerWebSocketRepository(
             while (isActive) {
                 symbols.forEach { sym ->
                     val last = _prices.value[sym]?.price ?: (100.0 + Random.nextDouble() * 200.0)
-                    val change = (Random.nextDouble() - 0.5) * (last * 0.01) // +/- ~0.5%
+                    val change = (Random.nextDouble() - 0.5) * (last * 0.01)
                     val newPrice = (last + change).coerceAtLeast(0.01)
                     val payload = "${sym}|${"%.2f".format(newPrice)}"
                     outgoingSharedFlow.emit(payload) // suspend if buffer full
@@ -136,7 +136,7 @@ class StockTrackerWebSocketRepository(
                                     sym,
                                     price,
                                     prev,
-                                    System.currentTimeMillis()//Instant.now().toEpochMilli()
+                                    System.currentTimeMillis()
                                 )
 
                                 priceInfoMap
@@ -146,7 +146,6 @@ class StockTrackerWebSocketRepository(
                 }
             }
         } catch (_: Throwable) {
-            // incoming closed or error — loop will reconnect
         }
     }
 
