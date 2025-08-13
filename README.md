@@ -52,3 +52,11 @@ Capable of controlling toggel for latest updated price of stocks
 **License**
 
 This project is licensed under the MIT License.
+
+
+
+
+
+https://github.com/user-attachments/assets/d6e29db9-2025-4248-b098-251e4606200f
+
+
