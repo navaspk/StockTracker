@@ -28,6 +28,12 @@ import com.tracker.stocktracker.ui.theme.Body16Medium
 import com.tracker.stocktracker.ui.viewmodel.StockTrackerViewModel
 import com.tracker.stocktracker.utils.epochToDateTime
 
+/**
+ * Home screen build using LazyColumn and helps to show Stock symbols, price and status
+ *
+ * Created by : Navas
+ * Date : 12/08/2025
+ */
 @Composable
 fun StockTrackerHomeScreen(
     viewModel: StockTrackerViewModel = koinViewModel()
@@ -84,7 +90,3 @@ fun StockRow(info: PriceInfo) {
         }
     }
 }
-
-/*if (up) "↑" else "↓",
-color = if (up) androidx.compose.ui.graphics.Color.Green else androidx.compose.ui.graphics.Color.Unspecified,
-fontWeight = FontWeight.Bold,*/

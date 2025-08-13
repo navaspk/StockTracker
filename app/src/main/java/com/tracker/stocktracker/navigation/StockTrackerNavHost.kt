@@ -9,6 +9,12 @@ import androidx.navigation.compose.composable
 import com.tracker.stocktracker.ui.composable.StockTrackerHomeScreen
 import com.tracker.stocktracker.R
 
+/**
+ * Setup Navigation graph to make navigation between multiple composable(Future use)
+ *
+ * Created by : Navas
+ * Date : 12/08/2025
+ */
 @Composable
 fun StockTrackerNavHost(
     modifier: Modifier = Modifier,

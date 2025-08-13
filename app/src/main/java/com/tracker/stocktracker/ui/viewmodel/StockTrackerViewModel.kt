@@ -6,6 +6,13 @@ import com.tracker.stocktracker.model.events.StockXEffect
 import com.tracker.stocktracker.model.events.StockXEvent
 import com.tracker.stocktracker.model.events.StockXUiState
 
+/**
+ * ViewModel helps to get event from composable and perform necessary action and sent back the
+ * state and effect to composable.
+ *
+ * Created by : Navas
+ * Date : 12/08/2025
+ */
 class StockTrackerViewModel(private val useCase: StockTrackerUseCase) :
     BaseViewModel<StockXEvent, StockXUiState, StockXEffect>() {
 

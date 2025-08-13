@@ -14,7 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.compose.rememberNavController
 import com.tracker.stocktracker.R
 import com.tracker.stocktracker.navigation.StockTrackerNavHost
-import com.tracker.stocktracker.ui.presentation.ShowComponentsToolBar
+import com.tracker.stocktracker.ui.presentation.ShowMainToolBar
 import com.tracker.stocktracker.ui.theme.StockTrackerTheme
 
 class StockTrackerActivity : ComponentActivity() {
@@ -31,7 +31,7 @@ class StockTrackerActivity : ComponentActivity() {
             StockTrackerTheme {
                 Scaffold(
                     topBar = {
-                        ShowComponentsToolBar(
+                        ShowMainToolBar(
                             stringResource(R.string.stock_x_home),
                             onBackClicked = { onBackPressedDispatcher.onBackPressed() }
                         )

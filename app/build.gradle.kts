@@ -79,4 +79,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    testImplementation(libs.kotlinx.coroutines.test)
+    // Mockito (Java style mocks, optional if using MockK)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.kotlin)
+    // OR MockK (Kotlin-first mocking)
+    testImplementation(libs.mockk)
 }

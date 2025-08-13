@@ -17,9 +17,15 @@ import com.tracker.stocktracker.model.events.StockXEvent
 import com.tracker.stocktracker.ui.viewmodel.StockTrackerViewModel
 import org.koin.androidx.compose.koinViewModel
 
+/**
+ * Toolbar text, status of connection and toggle for websocket
+ *
+ * Created by : Navas
+ * Date : 12/08/2025
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ShowComponentsToolBar(
+fun ShowMainToolBar(
     title: String,
     onBackClicked: () -> Unit,
     viewModel: StockTrackerViewModel = koinViewModel()

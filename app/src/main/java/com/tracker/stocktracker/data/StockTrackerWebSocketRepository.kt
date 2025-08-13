@@ -1,7 +1,7 @@
 package com.tracker.stocktracker.data
 
 import com.tracker.base.model.PriceInfo
-import com.tracker.base.domain.PriceRepository
+import com.tracker.base.domain.BaseStockXRepository
 import com.tracker.network.NetworkConstants.WEB_SOCKET_URL
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.websocket.DefaultClientWebSocketSession
@@ -23,9 +23,15 @@ import kotlinx.coroutines.joinAll
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
+/**
+ * This class help to connect to WebSocket for duplex bidirectional communication asynchronously
+ *
+ * Created by : Navas
+ * Date : 12/08/2025
+ */
 class StockTrackerWebSocketRepository(
     private val client: HttpClient
-) : PriceRepository {
+) : BaseStockXRepository {
 
     private val _prices = MutableStateFlow<Map<String, PriceInfo>>(emptyMap())
     override val prices = _prices.asStateFlow()

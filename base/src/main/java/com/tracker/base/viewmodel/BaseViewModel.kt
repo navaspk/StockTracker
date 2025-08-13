@@ -13,6 +13,13 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
+/**
+ * BaseViewModel following MVI pattern & will help to provide UIState and Effect back to composable
+ * upon user action
+ *
+ * Created by : Navas
+ * Date : 12/08/2025
+ */
 abstract class BaseViewModel<Event : ViewEvent, UiState : ViewState, Effect : ViewEffect> :
     ViewModel() {
 

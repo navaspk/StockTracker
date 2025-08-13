@@ -21,7 +21,6 @@ val Body16Medium = TextStyle(
     fontFamily = FontFamily.Default,
     fontWeight = FontWeight.Medium,
     fontSize = font16Body.sp,
-    color = darkBlue,
     lineHeight = 44.sp,
     letterSpacing = 0.5.sp
 )
@@ -30,7 +29,6 @@ val Body12Normal = TextStyle(
     fontFamily = FontFamily.Default,
     fontWeight = FontWeight.Normal,
     fontSize = font12Body.sp,
-    color = darkBlue,
     lineHeight = 44.sp,
     letterSpacing = 0.5.sp
 )
